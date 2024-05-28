@@ -1,6 +1,7 @@
 package com.greviews.MovieReviews.dtos;
 
 import com.greviews.MovieReviews.models.Genre;
+import com.greviews.MovieReviews.models.Language;
 import com.greviews.MovieReviews.models.Movie;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -25,6 +26,8 @@ public class CreateMovieRequest
     private String title;
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
+    @Enumerated(value = EnumType.STRING)
+    private Language language;
     private int duration;
     @NotBlank
     private String cast;
@@ -67,6 +70,7 @@ public class CreateMovieRequest
         return Movie.builder()
                 .title(this.title)
                 .genre(this.genre)
+                .language(this.language)
                 .duration(this.duration)
                 .cast(this.cast)
                 .releaseDate(this.releaseDate)

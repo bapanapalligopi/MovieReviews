@@ -1,6 +1,7 @@
 package com.greviews.MovieReviews.controllers;
 
 import com.greviews.MovieReviews.dtos.CreateSearchRequest;
+import com.greviews.MovieReviews.models.Language;
 import com.greviews.MovieReviews.models.Movie;
 import com.greviews.MovieReviews.servcie.MovieService;
 import jakarta.validation.Valid;
@@ -8,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:5173/")
-
+@CrossOrigin(origins = "http://192.168.1.4:8081")
 @RestController
 public class MovieController {
    @Autowired
@@ -39,5 +39,15 @@ public class MovieController {
     public List<Movie> moviesToday()
     {
         return  movieService.moviesToday();
+    }
+
+    @GetMapping("/topratedmovies")
+    public List<Movie> topRated(){
+        return movieService.topRated();
+    }
+    @GetMapping("/allmovies")
+    public List<Movie> allMoviesInLanguage(@RequestParam("lang") String language)
+    {
+        return movieService.allMoviesInLanguage(language);
     }
 }

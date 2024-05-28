@@ -2,6 +2,7 @@ package com.greviews.MovieReviews.servcie;
 
 import com.greviews.MovieReviews.dtos.CreateSearchRequest;
 import com.greviews.MovieReviews.models.Genre;
+import com.greviews.MovieReviews.models.Language;
 import com.greviews.MovieReviews.models.Movie;
 import com.greviews.MovieReviews.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,15 @@ public class MovieService {
     {
         LocalDate todayDate=LocalDate.now();
         return movieRepository.findByReleaseDate(todayDate);
+    }
+
+    public  List<Movie> topRated()
+    {
+        return movieRepository.findByRatingGreaterThanEqual(4.0);
+    }
+    public List<Movie> allMoviesInLanguage(String language)
+    {
+        return movieRepository.findAllByLanguage(Language.valueOf(language.toUpperCase()));
     }
 
 }

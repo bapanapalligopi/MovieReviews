@@ -24,6 +24,9 @@ public class Movie {
     private String title;
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
+    @Enumerated(value = EnumType.STRING)
+    private Language language;
+
     private int duration;
     @NotBlank
     private String cast;
@@ -74,6 +77,7 @@ public class Movie {
                 .id(this.id)
                 .title(this.title)
                 .genre(this.genre)
+                .language(this.language)
                 .duration(this.duration)
                 .cast(this.cast)
                 .releaseDate(this.releaseDate)

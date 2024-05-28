@@ -1,6 +1,7 @@
 package com.greviews.MovieReviews.repository;
 
 import com.greviews.MovieReviews.models.Genre;
+import com.greviews.MovieReviews.models.Language;
 import com.greviews.MovieReviews.models.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -23,5 +24,6 @@ public interface MovieRepository extends JpaRepository<Movie,Integer> {
     List<Movie> findByDurationLessThanEqual(int duration);
     List<Movie> findByDurationGreaterThanEqual(int duration);
     List<Movie> findByReleaseDate(LocalDate localDate);
+    List<Movie> findAllByLanguage(Language language);
 
 }
