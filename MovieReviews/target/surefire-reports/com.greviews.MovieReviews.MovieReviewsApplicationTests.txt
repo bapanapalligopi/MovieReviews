@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.greviews.MovieReviews.MovieReviewsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.422 s -- in com.greviews.MovieReviews.MovieReviewsApplicationTests
