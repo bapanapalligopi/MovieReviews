@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://192.168.1.4:8081", "https://bapanapalligopi.github.io/MovieReviewsFrontEnd"})
+@CrossOrigin(origins = {"http://192.168.1.4:8081", "https://bapanapalligopi.github.io/MovieReviewsFrontEnd/"})
 
 public class AdminController {
     @Autowired
